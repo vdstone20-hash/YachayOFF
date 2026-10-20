@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YachayOff | Administrador</title>
+    <link rel="stylesheet" th:href="@{/css/admin.css}">
+</head>
+<body>
+
+<div class="admin-layout">
+
+    <aside class="sidebar">
+        <div class="brand">🎓 Yachay<span>Off</span></div>
+
+        <nav>
+            <a class="active" th:href="@{/admin/dashboard}">⌂ Inicio</a>
+            <a th:href="@{/admin/usuarios}">♙ Usuarios</a>
+            <a th:href="@{/admin/cursos}">▣ Cursos</a>
+            <a th:href="@{/admin/reportes}">▥ Reportes</a>
+            <a th:href="@{/admin/configuracion}">⚙ Configuración</a>
+            <a th:href="@{/admin/sistema}">◈ Sistema</a>
+        </nav>
+
+        <form th:action="@{/logout}" method="post" class="logout-form">
+            <button type="submit">⇥ Cerrar sesión</button>
+        </form>
+    </aside>
+
+    <main class="main-content">
+
+        <header class="topbar">
+            <div>
+                <h1>¡Hola, Administrador!</h1>
+                <p>Panel de control de YachayOff</p>
+            </div>
+
+            <div class="admin-profile">
+                <div class="avatar">🛡️</div>
+                <div>
+                    <strong>Administrador</strong>
+                    <small>Gestión del sistema</small>
+                </div>
+            </div>
+        </header>
+
+        <section class="stats-grid">
+            <article class="stat-card">
+                <div class="stat-icon purple">♙</div>
+                <div>
+                    <h2>Usuarios</h2>
+                    <p>Gestión de cuentas</p>
+                    <a th:href="@{/admin/usuarios}">Ver usuarios →</a>
+                </div>
+            </article>
+
+            <article class="stat-card">
+                <div class="stat-icon blue">▣</div>
+                <div>
+                    <h2>Cursos</h2>
+                    <p>Contenido educativo</p>
+                    <a th:href="@{/admin/cursos}">Ver cursos →</a>
+                </div>
+            </article>
+
+            <article class="stat-card">
+                <div class="stat-icon orange">▤</div>
+                <div>
+                    <h2>Reportes</h2>
+                    <p>Actividad y resultados</p>
+                    <a th:href="@{/admin/reportes}">Consultar →</a>
+                </div>
+            </article>
+
+            <article class="stat-card">
+                <div class="stat-icon green">✓</div>
+                <div>
+                    <h2>Sistema</h2>
+                    <p>Panel administrativo</p>
+                    <span class="status">Interfaz disponible</span>
+                </div>
+            </article>
+        </section>
+
+        <section class="content-grid">
+
+            <article class="panel">
+                <div class="panel-heading">
+                    <h2>Bienvenido al panel</h2>
+                    <span class="pill">Administrador</span>
+                </div>
+
+                <p class="description">
+                    Desde aquí podrás supervisar YachayOff y administrar
+                    los usuarios, los cursos y los recursos educativos.
+                </p>
+
+                <div class="welcome-banner">
+                    <div>
+                        <h2>¡Todo listo para aprender!</h2>
+                        <p>Administra tu plataforma educativa.</p>
+                    </div>
+                    <div class="welcome-icon">🎓</div>
+                </div>
+
+                <h3>Accesos rápidos</h3>
+
+                <div class="quick-grid">
+                    <a th:href="@{/admin/usuarios}">
+                        <span>👥</span>
+                        <strong>Gestionar usuarios</strong>
+                    </a>
+
+                    <a th:href="@{/admin/cursos}">
+                        <span>📚</span>
+                        <strong>Gestionar cursos</strong>
+                    </a>
+
+                    <a th:href="@{/admin/reportes}">
+                        <span>📊</span>
+                        <strong>Consultar reportes</strong>
+                    </a>
+
+                    <a th:href="@{/admin/configuracion}">
+                        <span>⚙️</span>
+                        <strong>Configuración</strong>
+                    </a>
+                </div>
+            </article>
+
+            <aside class="panel activity-panel">
+                <h2>Actividad del sistema</h2>
+
+                <div class="activity-item">
+                    <span class="activity-icon purple">👤</span>
+                    <div>
+                        <strong>Administración</strong>
+                        <p>Accediste al panel de control.</p>
+                    </div>
+                </div>
+
+                <div class="activity-item">
+                    <span class="activity-icon blue">📚</span>
+                    <div>
+                        <strong>Contenido educativo</strong>
+                        <p>Accede a la gestión de cursos.</p>
+                    </div>
+                </div>
+
+                <div class="activity-item">
+                    <span class="activity-icon green">✓</span>
+                    <div>
+                        <strong>Sesión iniciada</strong>
+                        <p>Tu acceso fue reconocido.</p>
+                    </div>
+                </div>
+            </aside>
+
+        </section>
+
+        <footer>
+            YachayOff · Plataforma educativa
+        </footer>
+
+    </main>
+</div>
+
+</body>
+</html>

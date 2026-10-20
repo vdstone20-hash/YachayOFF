@@ -1,0 +1,204 @@
+
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YachayOff | Panel Docente</title>
+    <link rel="stylesheet" th:href="@{/css/teacher.css}">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+<div class="app">
+
+    <!-- MENÚ LATERAL -->
+    <aside class="sidebar">
+        <a class="brand" th:href="@{/teacher/dashboard}">
+            <span class="brand-icon"><i data-lucide="graduation-cap"></i></span>
+            <span>Yachay<span class="purple">Off</span></span>
+        </a>
+
+        <nav class="menu">
+            <a class="menu-item active" th:href="@{/teacher/dashboard}">
+                <i data-lucide="house"></i> Inicio
+            </a>
+            <a class="menu-item" th:href="@{/teacher/clases}">
+                <i data-lucide="book-open"></i> Mis clases
+            </a>
+            <a class="menu-item" th:href="@{/teacher/estudiantes}">
+                <i data-lucide="users"></i> Estudiantes
+            </a>
+            <a class="menu-item" th:href="@{/teacher/evaluaciones}">
+                <i data-lucide="clipboard-check"></i> Evaluaciones
+            </a>
+            <a class="menu-item" th:href="@{/teacher/recursos}">
+                <i data-lucide="folder-open"></i> Recursos
+            </a>
+            <a class="menu-item" th:href="@{/teacher/reportes}">
+                <i data-lucide="chart-no-axes-column"></i> Reportes
+            </a>
+            <a class="menu-item" th:href="@{/teacher/perfil}">
+                <i data-lucide="user-round"></i> Mi perfil
+            </a>
+        </nav>
+
+        <form th:action="@{/logout}" method="post" class="logout-form">
+            <button type="submit" class="logout">
+                <i data-lucide="log-out"></i> Cerrar sesión
+            </button>
+        </form>
+    </aside>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="main-content">
+
+        <header class="topbar">
+            <div>
+                <h1>¡Hola, Docente!</h1>
+                <p>Tu guía hace la diferencia.</p>
+            </div>
+
+            <div class="user-profile">
+                <div class="avatar"><i data-lucide="user-round"></i></div>
+                <div>
+                    <strong>Docente</strong>
+                    <small>Panel educativo</small>
+                </div>
+                <i data-lucide="chevron-down"></i>
+            </div>
+        </header>
+
+        <!-- BANNER -->
+        <section class="hero-banner">
+            <div class="hero-copy">
+                <span class="eyebrow">YACHAYOFF · ESPACIO DOCENTE</span>
+                <h2>Hoy es un gran día para enseñar</h2>
+                <p>La educación transforma vidas.</p>
+                <a th:href="@{/teacher/clases}" class="hero-button">
+                    Ver mis clases <i data-lucide="arrow-right"></i>
+                </a>
+            </div>
+            <div class="hero-illustration">
+                <i data-lucide="graduation-cap"></i>
+                <i data-lucide="book-open"></i>
+                <i data-lucide="sparkles"></i>
+            </div>
+        </section>
+
+        <!-- ACCESOS RÁPIDOS -->
+        <section class="quick-grid">
+            <a th:href="@{/teacher/clases}" class="quick-card">
+                <span class="quick-icon blue"><i data-lucide="calendar-days"></i></span>
+                <div><h3>Mis clases</h3><p>Gestiona tus cursos</p></div>
+                <i data-lucide="chevron-right" class="arrow"></i>
+            </a>
+
+            <a th:href="@{/teacher/estudiantes}" class="quick-card">
+                <span class="quick-icon cyan"><i data-lucide="users"></i></span>
+                <div><h3>Estudiantes</h3><p>Consulta el seguimiento</p></div>
+                <i data-lucide="chevron-right" class="arrow"></i>
+            </a>
+
+            <a th:href="@{/teacher/evaluaciones}" class="quick-card">
+                <span class="quick-icon pink"><i data-lucide="clipboard-check"></i></span>
+                <div><h3>Evaluaciones</h3><p>Organiza actividades</p></div>
+                <i data-lucide="chevron-right" class="arrow"></i>
+            </a>
+
+            <a th:href="@{/teacher/recursos}" class="quick-card">
+                <span class="quick-icon violet"><i data-lucide="folder-open"></i></span>
+                <div><h3>Recursos</h3><p>Material educativo</p></div>
+                <i data-lucide="chevron-right" class="arrow"></i>
+            </a>
+        </section>
+
+        <!-- CLASES Y RESUMEN -->
+        <section class="dashboard-grid">
+
+            <div class="panel classes-panel">
+                <div class="panel-heading">
+                    <div>
+                        <h2>Mis clases de hoy</h2>
+                        <p class="muted">Organiza tu jornada educativa</p>
+                    </div>
+                    <a th:href="@{/teacher/clases}" class="view-all">Ver todas →</a>
+                </div>
+
+                <div class="class-row">
+                    <span class="subject-icon purple-bg"><i data-lucide="calculator"></i></span>
+                    <div class="class-info">
+                        <h3>Matemática Básica</h3>
+                        <p>1.º de secundaria · 10:00 - 11:00</p>
+                    </div>
+                    <i data-lucide="chevron-right" class="arrow"></i>
+                </div>
+
+                <div class="class-row">
+                    <span class="subject-icon green-bg"><i data-lucide="flask-conical"></i></span>
+                    <div class="class-info">
+                        <h3>Ciencia y Tecnología</h3>
+                        <p>2.º de secundaria · 11:30 - 12:30</p>
+                    </div>
+                    <i data-lucide="chevron-right" class="arrow"></i>
+                </div>
+
+                <div class="class-row">
+                    <span class="subject-icon orange-bg"><i data-lucide="book-open"></i></span>
+                    <div class="class-info">
+                        <h3>Lengua y Literatura</h3>
+                        <p>1.º de secundaria · 14:00 - 15:00</p>
+                    </div>
+                    <i data-lucide="chevron-right" class="arrow"></i>
+                </div>
+            </div>
+
+            <div class="panel summary-panel">
+                <div class="panel-heading">
+                    <div>
+                        <h2>Resumen de la semana</h2>
+                        <p class="muted">Tu actividad educativa</p>
+                    </div>
+                    <i data-lucide="chart-no-axes-column" class="summary-symbol"></i>
+                </div>
+
+                <div class="stats">
+                    <div><strong>3</strong><span>Clases</span></div>
+                    <div><strong>28</strong><span>Estudiantes</span></div>
+                    <div><strong>5</strong><span>Evaluaciones</span></div>
+                </div>
+
+                <div class="chart" aria-label="Gráfico ilustrativo de actividad semanal">
+                    <div class="chart-column"><span style="height:65%"></span><small>Lun</small></div>
+                    <div class="chart-column"><span style="height:82%"></span><small>Mar</small></div>
+                    <div class="chart-column"><span style="height:70%"></span><small>Mié</small></div>
+                    <div class="chart-column"><span style="height:43%"></span><small>Jue</small></div>
+                    <div class="chart-column"><span style="height:95%"></span><small>Vie</small></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MENSAJE INSPIRADOR -->
+        <section class="quote-banner">
+            <span class="quote-icon"><i data-lucide="lightbulb"></i></span>
+            <div>
+                <h3>La educación no es llenar un vaso,</h3>
+                <p>sino encender un fuego.</p>
+            </div>
+            <span class="quote-author">— William Butler Yeats</span>
+            <i data-lucide="book-open" class="quote-decoration"></i>
+        </section>
+
+        <footer class="footer">
+            <span><i data-lucide="graduation-cap"></i> YachayOff · Educación para todos</span>
+            <span><i data-lucide="shield-check"></i> Espacio del docente</span>
+        </footer>
+
+    </main>
+</div>
+
+<script>
+    lucide.createIcons();
+</script>
+</body>
+</html>

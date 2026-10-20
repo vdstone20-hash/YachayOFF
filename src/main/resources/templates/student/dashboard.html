@@ -1,0 +1,266 @@
+
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YachayOff - Mi mundo de aprendizaje</title>
+    <link rel="stylesheet" th:href="@{/css/student.css}">
+</head>
+
+<body>
+<div class="app">
+
+    <aside class="sidebar">
+        <a class="brand" th:href="@{/student/dashboard}">
+            <span class="brand-icon">🎓</span>
+            <span>Yachay<span class="purple">Off</span></span>
+        </a>
+
+        
+
+        <div class="robot">
+            <div class="robot-icon">🤖</div>
+            <h3>¡Aprender también es una aventura!</h3>
+            <p>Explora, juega y descubre algo nuevo cada día.</p>
+        </div>
+
+        <form th:action="@{/logout}" method="post" class="logout">
+            <button type="submit">↪ Cerrar sesión</button>
+        </form>
+    </aside>
+
+    <main class="content">
+
+        <header class="topbar">
+            <div>
+                <span class="eyebrow">TU ESPACIO DE APRENDIZAJE</span>
+                <h1>¡Hola, explorador! 🚀</h1>
+                <p>¿Qué aventura vamos a descubrir hoy?</p>
+            </div>
+            <div class="student-badge">
+                <span>🧑‍🚀</span>
+                <div>
+                    <strong>Estudiante</strong>
+                    <small>¡Sigue aprendiendo!</small>
+                </div>
+            </div>
+        </header>
+
+        <section class="hero">
+            <div class="hero-copy">
+                <span class="tag">✨ BIENVENIDO A YACHAYOFF</span>
+                <h2>Tu curiosidad<br>te lleva <span>más lejos.</span></h2>
+                <p>Descubre animales, planetas, inventos y misterios.
+                   ¡El conocimiento está a un clic!</p>
+                <a class="primary-button" href="#categorias">
+                    Explorar ahora <span>→</span>
+                </a>
+            </div>
+
+            <div class="universe" aria-label="Ilustración del espacio">
+                <span class="planet planet-one">🪐</span>
+                <span class="planet planet-two">🌎</span>
+                <span class="planet planet-three">🌙</span>
+                <span class="star star-one">✦</span>
+                <span class="star star-two">✧</span>
+                <span class="rocket">🚀</span>
+            </div>
+        </section>
+
+        <section class="search-panel">
+            <div>
+                <h2>🔎 ¿Qué quieres aprender?</h2>
+                <p>Busca un tema que te dé curiosidad.</p>
+            </div>
+            <form class="search-box" id="searchForm">
+                <input id="searchInput" type="search"
+                       placeholder="Ej.: planetas, dinosaurios, sumas..."
+                       aria-label="Buscar temas">
+                <button type="submit">Buscar 🔍</button>
+            </form>
+        </section>
+
+        <section id="categorias" class="section">
+            <div class="section-heading">
+                <div>
+                    <span class="eyebrow">EXPLORA Y DESCUBRE</span>
+                    <h2>Tu mundo de conocimiento</h2>
+                </div>
+                <span class="counter">9 aventuras</span>
+            </div>
+
+            <div class="category-grid">
+
+                <a class="category-card" id="enciclopedia"
+                   href="#buscar-temas" data-search="enciclopedia animales personas lugares">
+                    <div class="card-art art-book">📚</div>
+                    <div class="card-info">
+                        <h3>Enciclopedia</h3>
+                        <p>Animales, lugares y grandes descubrimientos.</p>
+                        <span>Explorar →</span>
+                    </div>
+                </a>
+
+                <a class="category-card" id="atlas"
+                   href="#buscar-temas" data-search="atlas mundo países continentes geografía">
+                    <div class="card-art art-world">🌎</div>
+                    <div class="card-info">
+                        <h3>Atlas del mundo</h3>
+                        <p>Conoce países, continentes y culturas.</p>
+                        <span>Explorar →</span>
+                    </div>
+                </a>
+
+                <a class="category-card" id="ciencia"
+                   href="#buscar-temas" data-search="ciencia naturaleza planetas animales plantas">
+                    <div class="card-art art-science">🪐</div>
+                    <div class="card-info">
+                        <h3>Ciencia y naturaleza</h3>
+                        <p>Explora el universo, los animales y las plantas.</p>
+                        <span>Explorar →</span>
+                    </div>
+                </a>
+
+                <a class="category-card" id="tecnologia"
+                   href="#buscar-temas" data-search="tecnología computadoras internet robótica">
+                    <div class="card-art art-tech">💻</div>
+                    <div class="card-info">
+                        <h3>Tecnología</h3>
+                        <p>Computadoras, inventos y robots.</p>
+                        <span>Explorar →</span>
+                    </div>
+                </a>
+
+                <a class="category-card" id="arte"
+                   href="#buscar-temas" data-search="arte cultura música pintura historia">
+                    <div class="card-art art-art">🎨</div>
+                    <div class="card-info">
+                        <h3>Arte y cultura</h3>
+                        <p>Colores, música, pintura y tradiciones.</p>
+                        <span>Explorar →</span>
+                    </div>
+                </a>
+
+                <a class="category-card" id="historia"
+                   href="#buscar-temas" data-search="historia civilizaciones Perú incas">
+                    <div class="card-art art-history">🏛️</div>
+                    <div class="card-info">
+                        <h3>Historia</h3>
+                        <p>Grandes civilizaciones y nuestro pasado.</p>
+                        <span>Explorar →</span>
+                    </div>
+                </a>
+
+                <a class="category-card" id="matematicas"
+                   href="#buscar-temas" data-search="matemáticas números sumas restas lógica">
+                    <div class="card-art art-math">🔢</div>
+                    <div class="card-info">
+                        <h3>Matemáticas</h3>
+                        <p>Resuelve desafíos con números y figuras.</p>
+                        <span>Explorar →</span>
+                    </div>
+                </a>
+
+                <a class="category-card" id="lengua"
+                   href="#buscar-temas" data-search="lengua literatura lectura cuentos">
+                    <div class="card-art art-language">📖</div>
+                    <div class="card-info">
+                        <h3>Lengua y literatura</h3>
+                        <p>Lee cuentos, aprende palabras e imagina.</p>
+                        <span>Explorar →</span>
+                    </div>
+                </a>
+
+                <a class="category-card" id="juegos"
+                   href="#buscar-temas" data-search="juegos actividades retos educativos">
+                    <div class="card-art art-games">🎮</div>
+                    <div class="card-info">
+                        <h3>Juegos y actividades</h3>
+                        <p>Aprende mientras juegas y superas retos.</p>
+                        <span>Jugar →</span>
+                    </div>
+                </a>
+
+            </div>
+            <p id="noResults" hidden>No encontramos categorías con esa búsqueda.</p>
+        </section>
+
+        <section class="bottom-grid">
+            <article class="daily-card">
+                <span class="eyebrow">🌟 CURIOSIDAD DEL DÍA</span>
+                <h2>¡Nuestro planeta es increíble!</h2>
+                <p>La Tierra tiene océanos, montañas, desiertos,
+                   bosques y muchísimos seres vivos por descubrir.</p>
+                <a href="#ciencia">Seguir explorando →</a>
+            </article>
+
+            <article class="challenge-card">
+                <span class="eyebrow">🎯 TU RETO</span>
+                <h2>¡Entrena tu mente!</h2>
+                <p>¿Cuánto es 7 + 5?</p>
+                <div class="answer-options">
+                    <button type="button" data-answer="10">10</button>
+                    <button type="button" data-answer="12">12</button>
+                    <button type="button" data-answer="13">13</button>
+                </div>
+                <p id="challengeMessage" aria-live="polite"></p>
+            </article>
+        </section>
+
+        <footer>
+            <span>🎓 YachayOff</span>
+            <span>Aprender, descubrir y crecer.</span>
+        </footer>
+    </main>
+</div>
+
+<script>
+    const searchInput = document.getElementById('searchInput');
+    const cards = [...document.querySelectorAll('.category-card')];
+    const noResults = document.getElementById('noResults');
+
+    function filterCards(query) {
+        let visible = 0;
+        const normalized = query.trim().toLocaleLowerCase();
+
+        cards.forEach(card => {
+            const text = (
+                card.innerText + ' ' + card.dataset.search
+            ).toLocaleLowerCase();
+
+            const matches = text.includes(normalized);
+            card.hidden = !matches;
+            if (matches) visible++;
+        });
+
+        noResults.hidden = visible !== 0;
+    }
+
+    document.getElementById('searchForm').addEventListener('submit', e => {
+        e.preventDefault();
+        filterCards(searchInput.value);
+        document.getElementById('categorias')
+            .scrollIntoView({ behavior: 'smooth' });
+    });
+
+    searchInput.addEventListener('input', () => {
+        filterCards(searchInput.value);
+    });
+
+    document.querySelectorAll('[data-answer]').forEach(button => {
+        button.addEventListener('click', () => {
+            const message = document.getElementById('challengeMessage');
+
+            if (button.dataset.answer === '12') {
+                message.textContent = '¡Correcto! 🎉 ¡Eres genial!';
+                message.className = 'correct';
+            } else {
+                message.textContent = '¡Inténtalo otra vez! 💜';
+                message.className = 'try-again';
+            }
+        });
+    });
+</script>
+</body>
+</html>

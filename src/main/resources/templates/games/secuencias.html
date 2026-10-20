@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secuencias</title>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+
+    <nav>
+        <b>✦ YachayOff</b>
+        <a href="/juegos">Todos los juegos</a>
+    </nav>
+
+    <main class="page">
+        <h1>Secuencias</h1>
+
+        <p>
+            Completa una secuencia sencilla: 2, 4, 6, ...
+        </p>
+
+        <div class="tile game-box">
+            <div id="gameMessage">
+                La respuesta es 8.
+            </div>
+
+            <button onclick="sumarPunto()">
+                ¡Jugar!
+            </button>
+
+            <p>
+                Puntos de esta sesión:
+                <strong id="score">0</strong>
+            </p>
+        </div>
+    </main>
+
+    <script>
+        let score = 0;
+
+        function sumarPunto() {
+            score += 1;
+
+            document.getElementById("score").textContent = score;
+            document.getElementById("gameMessage").textContent =
+                "La respuesta es 8.";
+        }
+    </script>
+
+</body>
+</html>

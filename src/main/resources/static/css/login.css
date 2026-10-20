@@ -1,0 +1,256 @@
+/* --- Variables de Paleta de Colores --- */
+:root {
+    --bg-main: #0B0A12;
+    --card-bg: #13111C;
+    --option-bg: #1B1829;
+    --border-color: #2D2744;
+    --purple-primary: #7C3AED;
+    --purple-hover: #6D28D9;
+    --purple-glow: rgba(124, 58, 237, 0.4);
+    --text-primary: #FFFFFF;
+    --text-secondary: #9CA3AF;
+    --error-color: #EF4444;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+body.login-body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Container Principal estilo tarjeta dividida */
+.login-container {
+    width: 100%;
+    max-width: 960px;
+    background-color: #0E0C16;
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+/* Lado Izquierdo (Hero) */
+.login-hero {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    background: radial-gradient(circle at top left, rgba(124, 58, 237, 0.15), transparent 60%);
+    border-right: 1px solid var(--border-color);
+}
+
+.brand-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-icon {
+    background-color: var(--purple-primary);
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    box-shadow: 0 0 15px var(--purple-glow);
+}
+
+.brand-title {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.brand-title span {
+    color: var(--purple-primary);
+}
+
+.brand-subtitle {
+    color: var(--text-secondary);
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+.hero-image-wrapper {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-img {
+    max-width: 80%;
+    height: auto;
+    filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.5));
+}
+
+.brand-footer-text {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    z-index: 2;
+}
+
+/* Lado Derecho (Formulario / Opciones) */
+.login-card {
+    padding: 40px;
+    background-color: var(--card-bg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card-title {
+    font-size: 20px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.profile-options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+/* Tarjeta individual de perfil */
+.profile-option {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background-color: var(--option-bg);
+    border: 1px solid var(--border-color);
+    padding: 14px 18px;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.profile-option input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+}
+
+.profile-option:hover {
+    border-color: var(--purple-primary);
+    transform: translateY(-2px);
+}
+
+.profile-option.active {
+    background: linear-gradient(90deg, rgba(124, 58, 237, 0.25), var(--option-bg));
+    border-color: var(--purple-primary);
+    box-shadow: 0 0 15px rgba(124, 58, 237, 0.2);
+}
+
+.option-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-secondary);
+}
+
+.profile-option.active .option-icon {
+    background-color: var(--purple-primary);
+    color: white;
+}
+
+.option-info h3 {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.option-info p {
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+/* Inputs de Texto */
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 16px;
+}
+
+.input-group label {
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+
+.input-group input {
+    background-color: var(--option-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 12px 14px;
+    color: white;
+    outline: none;
+    transition: border 0.3s ease;
+}
+
+.input-group input:focus {
+    border-color: var(--purple-primary);
+}
+
+/* Botón de Submit */
+.btn-submit {
+    background-color: var(--purple-primary);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 14px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.btn-submit:hover {
+    background-color: var(--purple-hover);
+    box-shadow: 0 0 20px var(--purple-glow);
+}
+
+/* Alerta de Error */
+.alert-error {
+    background-color: rgba(239, 68, 68, 0.1);
+    border: 1px solid var(--error-color);
+    color: var(--error-color);
+    padding: 10px 14px;
+    border-radius: 10px;
+    font-size: 13px;
+    margin-bottom: 16px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .login-container {
+        grid-template-columns: 1fr;
+    }
+    .login-hero {
+        display: none; /* Oculta la columna izquierda en pantallas móviles */
+    }
+}

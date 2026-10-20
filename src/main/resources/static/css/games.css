@@ -1,0 +1,52 @@
+.game-screen {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.game-area {
+    flex: 1;
+    min-width: 500px;
+    background: #1b1732;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.game-panel {
+    width: 250px;
+    background: #141225;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.score {
+    font-size: 32px;
+    color: #facc15;
+    font-weight: bold;
+}
+
+.timer {
+    font-size: 24px;
+    color: #ef4444;
+}
+
+.game-btn {
+    width: 100%;
+    background: #7c3aed;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 12px;
+    margin-top: 15px;
+}
+
+.game-btn:hover {
+    background: #9333ea;
+}
+
+.badge {
+    background: #302044;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 10px;
+}

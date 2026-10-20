@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laberinto</title>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+
+    <nav>
+        <b>✦ YachayOff</b>
+        <a href="/juegos">Todos los juegos</a>
+    </nav>
+
+    <main class="page">
+        <h1>Laberinto</h1>
+
+        <p>
+            Usa las flechas del teclado para explorar el reto.
+        </p>
+
+        <div class="tile game-box">
+            <div id="gameMessage">
+                ¡Buen recorrido!
+            </div>
+
+            <button onclick="sumarPunto()">
+                ¡Jugar!
+            </button>
+
+            <p>
+                Puntos de esta sesión:
+                <strong id="score">0</strong>
+            </p>
+        </div>
+    </main>
+
+    <script>
+        let score = 0;
+
+        function sumarPunto() {
+            score += 1;
+
+            document.getElementById("score").textContent = score;
+            document.getElementById("gameMessage").textContent = "¡Buen recorrido!";
+        }
+    </script>
+
+</body>
+</html>
